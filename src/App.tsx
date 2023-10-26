@@ -21,6 +21,7 @@ const createItems = () => {
 
 const App = () => {
   const [items, setItems] = useState<Item[]>(createItems());
+  const [count, setCount] = useState(0);
 
   const clickSquare = (item: Item) => {
     setItems((prevState): Item[] => {
@@ -31,6 +32,8 @@ const App = () => {
         return itemState;
       });
     });
+
+    setCount(prevState => prevState + 1);
   };
 
   return (
@@ -47,7 +50,7 @@ const App = () => {
             })
           }
         </div>
-        <p>Tries: 0</p>
+        <p>Tries: {count}</p>
         <button>Reset</button>
       </div>
     </div>
