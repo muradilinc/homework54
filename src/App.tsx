@@ -24,13 +24,12 @@ const App = () => {
 
   const clickSquare = (item: Item) => {
     setItems((prevState): Item[] => {
-      prevState.map((itemState) => {
+      return prevState.map((itemState) => {
         if (item === itemState){
           itemState.clicked = true;
         }
+        return itemState;
       });
-
-      return prevState;
     });
   };
 
