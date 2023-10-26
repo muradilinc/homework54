@@ -1,4 +1,7 @@
 import {useState} from 'react';
+import Square from '../components/Square/Square.tsx';
+import Button from '../components/Button/Button.tsx';
+import Counter from '../components/Counter/Counter.tsx';
 import {Item} from '../types';
 import './App.css';
 
@@ -29,17 +32,24 @@ const App = () => {
         if (item === itemState){
           itemState.clicked = true;
         }
-
         return itemState;
       });
     });
 
     if (item.hasItem){
-      alert("Вы нашли!! нажмите ок что бы начать занаво");
-      setItems(createItems());
+      setTimeout(() => {
+        alert("Вы нашли!! нажмите ок что бы начать занаво");
+        setItems(createItems());
+        setCount(0);
+      }, 200);
     }
 
     setCount(prevState => prevState + 1);
+  };
+
+  const resetButton = () => {
+    setItems(createItems());
+    setCount(0);
   };
 
   return (
@@ -48,16 +58,12 @@ const App = () => {
         <div className="squaresContainer">
           {
             items.map((item, index) => {
-              return (
-                <div key={index} className={item.clicked ? "open" : "square"} onClick={() => clickSquare(item)}>
-                  {item.hasItem ? 'here' : null}
-                </div>
-              );
+              return <Square key={index} item={item} clickSquare={clickSquare}/>;
             })
           }
         </div>
-        <p>Tries: {count}</p>
-        <button onClick={() => setItems(createItems())}>Reset</button>
+        <Counter count={count}/>
+        <Button onClick={resetButton}>Reset</Button>
       </div>
     </div>
   );

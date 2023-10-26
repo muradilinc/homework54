@@ -1,0 +1,19 @@
+.square{
+  background: lightgrey;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+.square img{
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+}
+.open{
+  background: #fff;
+}
+.open img{
+  max-width: 100%;
+  height: auto;
+  opacity: 1;
+}
