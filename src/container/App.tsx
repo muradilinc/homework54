@@ -24,7 +24,7 @@ const createItems = () => {
 
 const App = () => {
   const [items, setItems] = useState<Item[]>(createItems());
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
 
   const clickSquare = (item: Item) => {
     setItems((prevState): Item[] => {
