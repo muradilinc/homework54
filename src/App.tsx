@@ -29,9 +29,15 @@ const App = () => {
         if (item === itemState){
           itemState.clicked = true;
         }
+
         return itemState;
       });
     });
+
+    if (item.hasItem){
+      alert("Вы нашли!! нажмите ок что бы начать занаво");
+      setItems(createItems());
+    }
 
     setCount(prevState => prevState + 1);
   };
@@ -51,7 +57,7 @@ const App = () => {
           }
         </div>
         <p>Tries: {count}</p>
-        <button>Reset</button>
+        <button onClick={() => setItems(createItems())}>Reset</button>
       </div>
     </div>
   );
