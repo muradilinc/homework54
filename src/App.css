@@ -1,0 +1,26 @@
+.container{
+  max-width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+}
+.gamePlay{
+  text-align: center;
+}
+.squaresContainer{
+  border: 1px solid #000;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  grid-auto-rows: 100px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.square{
+  background: lightgrey;
+  width: 100px;
+  height: 100px;
+}
+.open{
+  background: #fff;
+}
